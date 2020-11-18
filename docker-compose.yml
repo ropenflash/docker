@@ -6,5 +6,11 @@ services:
          - "3000:3000"
     server:
      build: ./server
+     links:
+         - database
      ports: 
          - "8080:8080"
+    database:
+     image: mongo
+     ports:
+         - "27017:27017"
